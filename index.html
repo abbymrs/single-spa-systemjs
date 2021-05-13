@@ -12,20 +12,25 @@
     browsers. More information at https://github.com/single-spa/create-single-spa/issues/112
   -->
     <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
-    <script src="./node_modules/single-spa/lib/umd/single-spa.dev.js"></script>
+    <!-- <script src="./node_modules/single-spa/lib/umd/single-spa.dev.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.0/dist/system.js"></script>
 
     <script type="systemjs-importmap">
       {
         "imports": {
-          "app": "./app1/app1.js"
+          "single-spa": "./single-spa.min.js",
+          "app": "./app1/app1.js",
+          "app2": "./app2/app2.js"
         }
       }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.0/dist/system.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.0/dist/extras/amd.js"></script>
   </head>
   <body>
     <script src="./single-spa-config.js"></script>
+    <!-- <app2></app2> -->
+    <div id="single-spa-application:app"></div>
+    <div id="single-spa-application:app3"></div>
   </body>
 </html>

@@ -1,18 +1,22 @@
 System.register([], function (_export, _moduleContext) {
-  let domEl;
 
   function bootstrap(props) {
     console.log(props);
     return Promise.resolve().then(() => {
-      domEl = document.createElement("div");
-      domEl.id = "app1";
+      const domEl = document.createElement("div");
+      domEl.textContent = props.name + " is mounted!";
+      domEl.id = props.name+Date.now();
+      
+      const appContainer = document.createElement('div');
+      appContainer.setAttribute('id', 'single-spa-application:'+props.name);
       document.body.appendChild(domEl);
+      document.body.appendChild(appContainer);
     });
   }
 
   function mount(props) {
     return Promise.resolve().then(() => {
-      domEl.textContent = "App1 is mounted!";
+      // domEl.textContent = props.name + " is mounted!";
     });
   }
 
