@@ -18,7 +18,7 @@
     <script type="systemjs-importmap">
       {
         "imports": {
-          "single-spa": "./single-spa.min.js",
+          "single-spa": "./single-spa.dev.js",
           "app": "./app1/app1.js",
           "app2": "./app2/app2.js"
         }
@@ -26,11 +26,11 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.0/dist/extras/amd.js"></script>
+    <script src="./single-spa.dev.js"></script>
   </head>
   <body>
     <script src="./single-spa-config.js"></script>
-    <!-- <app2></app2> -->
-    <div id="single-spa-application:app"></div>
-    <div id="single-spa-application:app3"></div>
+    <button id="app">register app</button>
+    <button id="detach" disabled>unregister app</button>
   </body>
 </html>
